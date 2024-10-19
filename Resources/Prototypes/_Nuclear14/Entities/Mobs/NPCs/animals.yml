@@ -992,7 +992,7 @@
 - type: entity
   name: Scampi
   id: N14MobMoleratScampi
-  parent: N14MobBase
+  parent: N14MobBaseSimple
   description: The one-eyed pal of the lonliest Scribes. God have mercy on you if any harm comes to her by your hand. 
   components:
   - type: Sprite
