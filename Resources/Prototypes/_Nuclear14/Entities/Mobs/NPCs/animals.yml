@@ -987,3 +987,70 @@
   - type: HTN
     rootTask:
       task: MouseCompound
+
+#MARK: MoleratScampi #Nerb here! Learning to code!
+- type: entity
+  name: Scampi
+  id: N14MobMoleratScampi
+  parent: N14MobBase
+  description: The one-eyed pal of the lonliest Scribes. God have mercy on you if any harm comes to her by your hand. 
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: molerat
+      sprite: _Nuclear14/Mobs/Animals/Scampi.rsi
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+            radius: 0.20
+        density: 20
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      25: Dead
+  - type: Stamina
+    critThreshold: 60
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: scampi.png
+      Critical:
+        Base: scampi.png
+      Dead:
+        Base: scampi_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    hidden: true
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 60
+    animation: WeaponArcBite
+    wideAnimation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 3
+  - type: Reproductive
+    breedChance: 0.00
+    birthPopup: reproductive-birth-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Scampi
+    offspring:
+    - id: N14MobMolerat
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: Tag
+    tags:
+    - MoleratScampi
